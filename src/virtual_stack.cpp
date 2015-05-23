@@ -1,6 +1,6 @@
 #include <stack>
 #include <iostream>
-#incldue <assert.h>
+#include <assert.h>
 
 #include "virtual_stack.hpp"
 
@@ -44,7 +44,7 @@ void virtual_stack::pop_n(int n){
   STACK.push(head);
 }
 void virtual_stack::run_instruction(instruction I){
-  switch I.com{
+  switch(I.com){
     case PUSH: 
       push(I.data);
       break;
@@ -52,7 +52,7 @@ void virtual_stack::run_instruction(instruction I){
       dup_top();
       break;
     case DUP_NTH: 
-      void dup_nth(I.data);
+      dup_nth(I.data);
       break;
     case SWOP_2_TOP: 
       swop_2_top();

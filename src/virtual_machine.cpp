@@ -15,6 +15,7 @@ void virtual_machine::run_instruction(instruction In){
     STACK.run_instruction(In);
     break;
   default:
+    break;
   }
 }
 void virtual_machine::print_stack(){

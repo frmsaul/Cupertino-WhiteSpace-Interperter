@@ -6,10 +6,7 @@
 #include <string>
 #include <vector>
 
-#include "instruction.h"
-using namespace std;
+#include "instruction.hpp"
 
-vector<instruction> get_instruction_vector(string FILE_NAME){
-  
-}
+std::vector<instruction> get_instruction_vector(std::string FILE_NAME);
 #endif
