@@ -1,0 +1,4 @@
+1. Start by implementing the VM and progress from that position.
+2. Write Test programs for the VM
+3. Implement two different parsers, 
+   one shoudl be a psudo parser. 
