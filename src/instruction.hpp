@@ -1,7 +1,6 @@
 #ifndef _H_INSTRUCTION
 #define _H_INSTRUCTION
 
-#include <bitset>
 using namespace std;
 
 enum IMP_TYPE { 
@@ -11,16 +10,27 @@ enum IMP_TYPE {
   FLOW_CONT,
   IO
 };
+enum COMMAND {
+  /*Stack Manipulation*/
+  PUSH,
+  DUP_TOP, 
+  DUP_NTH,
+  SWOP_2_TOP,
+  POP,
+  POP_N
+};
 
-typedef struct instruction instruction;
-struct instruction{
-  instruction(IMP_TYPE instruc_type, bitset _data){
+
+typedef struct instruction{
+  instruction(IMP_TYPE instruc_type, COMMAND _com, int _data){
     type = instruc_type;
+    com = _com;
     data = _data;
   }
-  IMP_TYPE type = instruc_type;
-  bitset data;
-};
+  IMP_TYPE type;
+  COMMAND com;
+  int data;
+} instruction;
 
 
 

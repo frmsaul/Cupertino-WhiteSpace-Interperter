@@ -2,3 +2,6 @@
 2. Write Test programs for the VM
 3. Implement two different parsers, 
    one shoudl be a psudo parser. 
+4. In instruction class, change raw data to an integer
+5. Variable lenght integers.
+6. Make your own STACK class (<- with all the stack manipulation commends)
