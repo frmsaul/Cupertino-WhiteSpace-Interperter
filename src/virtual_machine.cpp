@@ -21,3 +21,6 @@ void virtual_machine::run_instruction(instruction In){
 void virtual_machine::print_stack(){
   STACK.print_stack();
 }
+virtual_machine::virtual_machine(){
+  
+}
