@@ -6,6 +6,43 @@
 
 using namespace std;
 
+void virtual_stack::add(){
+  int left = STACK.top();
+  STACK.pop();
+  int right = STACK.top();
+  STACK.pop();
+  STACK.push(left + right);
+}
+void virtual_stack::subtruct(){
+  int left = STACK.top();
+  STACK.pop();
+  int right = STACK.top();
+  STACK.pop();
+  STACK.push(left - right);
+}
+void virtual_stack::multiply(){
+  int left = STACK.top();
+  STACK.pop();
+  int right = STACK.top();
+  STACK.pop();
+  STACK.push(left * right);
+}
+void virtual_stack::divide(){
+  int left = STACK.top();
+  STACK.pop();
+  int right = STACK.top();
+  STACK.pop();
+  STACK.push(left / right);
+}
+void virtual_stack::mod(){
+  int left = STACK.top();
+  STACK.pop();
+  int right = STACK.top();
+  STACK.pop();
+  STACK.push(left % right);
+}
+
+
 void virtual_stack::push(int n){
   STACK.push(n);
 }
@@ -43,6 +80,29 @@ void virtual_stack::pop_n(int n){
   }
   STACK.push(head);
 }
+void virtual_stack::run_arth_instruction(instruction I){
+  switch(I.com){
+  case ADD: 
+    add();
+    break;
+  case SUBTRUCT: 
+    subtruct();
+    break;
+  case MULTIPLY: 
+    multiply();
+    break;
+  case DIVIDE:
+    divide();
+    break;
+  case MOD:
+    mod();
+    break;
+  default:
+    cout << "command isn't an arthimatic command" << endl;
+    assert(1 == 0);
+  }
+}
+
 void virtual_stack::run_instruction(instruction I){
   switch(I.com){
     case PUSH: 

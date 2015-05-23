@@ -17,7 +17,13 @@ enum COMMAND {
   DUP_NTH,
   SWOP_2_TOP,
   POP,
-  POP_N
+  POP_N,
+  /*Arithmetic operation*/
+  ADD,
+  SUBTRUCT,
+  MULTIPLY,
+  DIVIDE,
+  MOD
 };
 
 

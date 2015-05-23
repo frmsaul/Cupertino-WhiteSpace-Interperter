@@ -14,6 +14,9 @@ void virtual_machine::run_instruction(instruction In){
   case STACK_MAN:
     STACK.run_instruction(In);
     break;
+  case ARITHMETIC:
+    STACK.run_arth_instruction(In);
+    break;
   default:
     break;
   }

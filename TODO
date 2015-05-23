@@ -5,3 +5,4 @@
 4. In instruction class, change raw data to an integer
 5. Variable lenght integers.
 6. Make your own STACK class (<- with all the stack manipulation commends)
+7. Figure out if the DUP_NTH 0 should throw an error or duplicate the first element on the stack. 
