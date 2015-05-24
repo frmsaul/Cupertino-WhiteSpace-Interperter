@@ -24,6 +24,8 @@ typedef struct virtual_stack{
   void multiply();
   void divide();
   void mod();
+  
+  int top(); //<- I added this one, not actually in WHITESPACE
 } virtual_stack;
 
 

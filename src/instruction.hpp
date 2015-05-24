@@ -23,7 +23,15 @@ enum COMMAND {
   SUBTRUCT,
   MULTIPLY,
   DIVIDE,
-  MOD
+  MOD,
+  /*HEAP Access*/
+  STORE, 
+  RETRIEVE,
+  /*IO*/
+  WRITE_CHAR,
+  WRITE_NUM,
+  READ_CHAR,
+  READ_NUM
 };
 
 

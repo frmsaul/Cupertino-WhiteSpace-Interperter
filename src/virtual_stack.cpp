@@ -42,6 +42,9 @@ void virtual_stack::mod(){
   STACK.push(left % right);
 }
 
+int virtual_stack::top(){
+  return STACK.top();
+}
 
 void virtual_stack::push(int n){
   STACK.push(n);
