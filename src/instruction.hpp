@@ -27,6 +27,14 @@ enum COMMAND {
   /*HEAP Access*/
   STORE, 
   RETRIEVE,
+  /*FLOW Control*/
+  MARK_LABLE,
+  CALL,
+  JMP, 
+  JMP_IF_0,
+  JMP_IF_NEG,
+  RETURN,
+  END_PROGRAM,
   /*IO*/
   WRITE_CHAR,
   WRITE_NUM,

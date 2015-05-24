@@ -5,6 +5,7 @@
 #include "../tests/test_arthimetic.hpp"
 #include "../tests/test_IO.hpp"
 #include "../tests/test_heap.hpp"
+#include "../tests/test_flow.hpp"
 
 using namespace std;
 
@@ -12,7 +13,9 @@ using namespace std;
 
 int main(){
   cout << "White Space Interperter Testing" << endl;
-  test_IO();
+  test_heap();
+  //test_IO();
+  //test_flow();
   //  test_stack_man();
   // test_arthimetic();
   return 0;
