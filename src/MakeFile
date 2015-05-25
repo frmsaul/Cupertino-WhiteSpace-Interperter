@@ -1,4 +1,4 @@
-all: main.cpp virtual_machine.cpp virtual_stack.cpp
-	g++ main.cpp virtual_machine.cpp virtual_stack.cpp -o test
+all: main.cpp virtual_machine.cpp virtual_stack.cpp parser.cpp
+	g++ main.cpp virtual_machine.cpp virtual_stack.cpp parser.cpp -o test
 clean:
 	rm *~

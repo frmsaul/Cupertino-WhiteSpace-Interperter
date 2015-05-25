@@ -24,6 +24,8 @@ private:
   void IO_instruction(instruction I);
   void FLOW_instruction(instruction I);
   
+  void set_lables_map();
+
   stack<int> program_ptr_stack;
   map<int,int> lables;
   vector<instruction> program_memory;

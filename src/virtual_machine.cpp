@@ -8,8 +8,8 @@
 
 using namespace std;
 
-
 void virtual_machine::start(){
+  set_lables_map();
   while(!program_ptr_stack.empty()){
     instruction temp = program_memory[program_ptr_stack.top()];
     program_ptr_stack.top()++;
@@ -17,7 +17,15 @@ void virtual_machine::start(){
     run_instruction(temp);
   }
 }
-
+void virtual_machine::set_lables_map(){
+  for(int i = 0; i < program_memory.size(); i++){
+    instruction temp = program_memory[i];
+    if(temp.com == MARK_LABLE && temp.type == FLOW_CONT){
+      lables[temp.data] = i;
+      cout << "lable "  << temp.data << " at: " << i << endl;
+    }
+  }
+}
 void virtual_machine::run_instruction(instruction In){
   switch(In.type){
   case STACK_MAN:
@@ -109,7 +117,7 @@ virtual_machine::virtual_machine(vector<instruction> machine_code){
 void virtual_machine::IO_instruction(instruction In){
   switch(In.com){
   case WRITE_CHAR:
-    cout << (char)STACK.top() << endl;
+    cout << (char)STACK.top();
     break;
   case WRITE_NUM:
     cout << STACK.top() << endl;
