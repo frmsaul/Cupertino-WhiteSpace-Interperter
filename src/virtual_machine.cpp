@@ -22,7 +22,7 @@ void virtual_machine::set_lables_map(){
     instruction temp = program_memory[i];
     if(temp.com == MARK_LABLE && temp.type == FLOW_CONT){
       lables[temp.data] = i;
-      cout << "lable "  << temp.data << " at: " << i << endl;
+      //      cout << "lable "  << temp.data << " at: " << i << endl;
     }
   }
 }
@@ -72,7 +72,7 @@ void virtual_machine::FLOW_instruction(instruction In){
     break;
   case END_PROGRAM:
     program_ptr_stack.pop();
-    cout << "program has ended" << endl;
+    //    cout << "program has ended" << endl;
     break;
   default:
     cout << "not a valid flow control commend" << endl;

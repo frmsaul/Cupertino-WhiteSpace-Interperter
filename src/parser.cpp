@@ -43,8 +43,10 @@ vector<instruction> get_instruction_vector(string FILE_NAME){
     } else{
       temp_inst.data = -1;
     }
-    temp_inst.print();
+    //    temp_inst.print();
+    instrucs.push_back(temp_inst);
   }
+  return instrucs;
 }
 COMMAND detect_stack_man_command(vector<char>::iterator& CH){
   if(*CH == SPACE){
@@ -185,7 +187,7 @@ vector<char> get_bytes(string FILE_NAME){
   char buffer;
   while(FileBin >> buffer){
     if(is_white_space_char(buffer)){
-      cout << (int)buffer << endl;
+      //cout << (int)buffer << endl;
       bytes.push_back(buffer);
     }
   }

@@ -1,4 +1,4 @@
 all: main.cpp virtual_machine.cpp virtual_stack.cpp parser.cpp
-	g++ main.cpp virtual_machine.cpp virtual_stack.cpp parser.cpp -o test
+	g++ main.cpp virtual_machine.cpp virtual_stack.cpp parser.cpp -o whitespace
 clean:
 	rm *~
