@@ -15,7 +15,8 @@ using namespace std;
 
 int main(){
   cout << "White Space Interperter Testing" << endl;
-  get_instruction_vector("..\\whitespace_code\\test_reader_ability.ws");
+  get_instruction_vector("..\\whitespace_code\\hello_world.hs");
+  //get_bytes("..\\whitespace_code\\test1.ws");
   //test_heap();
   //test_IO();
   //  test_flow();

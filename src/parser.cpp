@@ -23,7 +23,18 @@ vector<instruction> get_instruction_vector(string FILE_NAME){
     case STACK_MAN:
       temp_inst.com = detect_stack_man_command(CH);
       break;
-    default:
+    case FLOW_CONT:
+      temp_inst.com = detect_flow_cont_command(CH);
+      break;
+    case ARITHMETIC:
+      temp_inst.com = detect_arith_command(CH);
+      break;
+    case HEAP_ACC:
+      temp_inst.com = detect_heap_command(CH);
+      break;
+    case IO:
+      temp_inst.com = detect_IO_command(CH);
+      break;
     }
     CH++;
     //detecting data
@@ -32,6 +43,7 @@ vector<instruction> get_instruction_vector(string FILE_NAME){
     } else{
       temp_inst.data = -1;
     }
+    temp_inst.print();
   }
 }
 COMMAND detect_stack_man_command(vector<char>::iterator& CH){
@@ -43,7 +55,7 @@ COMMAND detect_stack_man_command(vector<char>::iterator& CH){
     if(*CH == SPACE){
       return DUP_TOP;
     } else if(*CH == TAB){
-      return SWOP_TOP_2;
+      return SWOP_2_TOP;
     } else if(*CH == NEW_LINE){
       return POP;
     }
@@ -53,10 +65,84 @@ COMMAND detect_stack_man_command(vector<char>::iterator& CH){
     if(*CH == SPACE){
       return DUP_NTH;
     } else if(*CH == NEW_LINE){
-      return POP_NTH;
+      return POP_N;
     }
   }
 }
+COMMAND detect_arith_command(vector<char>::iterator& CH){
+  if(*CH == SPACE){
+    CH++;
+    if(*CH == SPACE){
+      return ADD;
+    } else if(*CH == TAB){
+      return SUBTRUCT;
+    } else if(*CH == NEW_LINE){
+      return MULTIPLY;
+    }
+  }
+  else if(*CH == TAB){
+    CH++;
+    if(*CH == SPACE){
+      return DIVIDE;
+    } else if(*CH == TAB){
+      return MOD;
+    }
+  }
+}
+COMMAND detect_heap_command(vector<char>::iterator& CH){
+  if(*CH == SPACE){
+    return STORE;
+  }
+  else if(*CH == TAB){
+    return RETRIEVE;
+  }
+}
+COMMAND detect_flow_cont_command(vector<char>::iterator& CH){
+  if(*CH == SPACE){
+    CH++;
+    if(*CH == SPACE){
+      return MARK_LABLE;
+    } else if(*CH == TAB){
+      return CALL;
+    } else if(*CH == NEW_LINE){
+      return JMP;
+    }
+  }
+  else if(*CH == TAB){
+    CH++;
+    if(*CH == SPACE){
+      return JMP_IF_0;
+    } else if(*CH == TAB){
+      return JMP_IF_NEG;
+    } else if(*CH == NEW_LINE){
+      return RETURN;
+    }
+  } else if(*CH == NEW_LINE){
+    CH++;
+    if(*CH == NEW_LINE){
+      return END_PROGRAM;
+    }
+  }
+}
+COMMAND detect_IO_command(vector<char>::iterator& CH){
+  if(*CH == SPACE){
+    CH++;
+    if(*CH == SPACE){
+      return WRITE_CHAR;
+    } else if(*CH == TAB){
+      return WRITE_NUM;
+    }
+  }
+  else if(*CH == TAB){
+    CH++;
+    if(*CH == SPACE){
+      return READ_CHAR;
+    } else if(*CH == TAB){
+      return READ_NUM;
+    } 
+  }
+}
+
 int detect_data(vector<char>::iterator& CH){
   int sign = (*CH == SPACE)? 1: -1;
   CH++;
