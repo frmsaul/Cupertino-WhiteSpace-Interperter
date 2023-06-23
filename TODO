@@ -1,11 +1,1 @@
-1. Start by implementing the VM and progress from that position.
-2. Write Test programs for the VM
-3. Implement two different parsers, 
-   one shoudl be a psudo parser. 
-4. In instruction class, change raw data to an integer
-5. Variable lenght integers.
-6. Make your own STACK class (<- with all the stack manipulation commends)
-7. Figure out if the DUP_NTH 0 should throw an error or duplicate the first element on the stack.
-8. test heap
-9. write a preprocesser to fill the "lables" hash map with values
-10. test flow control 
+
